@@ -8,13 +8,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - kubernetix.de
-    secretName: kubernetix-ingress-tls
-  - hosts:
-    - microbot.kubernetix.de
+    - microbot.ubuntuix.local
     secretName: microbot-ingress-tls
   rules:
-  - host: microbot.kubernetix.de
+  - host: microbot.ubuntuix.local
     http:
      paths:
      - path: /
@@ -24,13 +21,4 @@ spec:
            name: microbot
            port:
              number: 80
-  - host: kubernetix.de
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: microbot
-            port:
-              number: 80
+
