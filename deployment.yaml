@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: microbot
+  namespace: microbot
+  labels:
+    app: microbot
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: microbot
+  template:
+    metadata:
+      labels:
+        app: microbot
+    spec:
+      containers:
+      - name: microbot
+        image: dontrebootme/microbot:v1
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "100m"
+        ports:
+        - containerPort: 80
