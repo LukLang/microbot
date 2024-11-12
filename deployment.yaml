@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: microbot
-        image: dontrebootme/microbot:v2
+        image: dontrebootme/microbot:v1
         resources:
           limits:
             memory: "128Mi"
